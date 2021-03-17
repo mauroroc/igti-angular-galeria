@@ -1,0 +1,14 @@
+<h2>{{titulo}}</h2>
+<p><img src={{fotos[posicao]}} height=500></p>
+<table>    
+    <tr *ngIf="tamanho>0">
+        <td>Foto {{posicao + 1}} de {{tamanho}}</td>
+        <td><button [disabled]="posicao == 0" (click)="mudaPosicao(0)">|<</button></td>
+        <td><button [disabled]="posicao == 0" (click)="mudaPosicao(posicao-1)"><</button></td>
+        <td><button [disabled]="posicao == tamanho - 1"(click)="mudaPosicao(posicao+1)">></button></td>
+        <td><button [disabled]="posicao == tamanho - 1"(click)="mudaPosicao(tamanho-1)">>|</button></td>
+    </tr>
+    <tr *ngIf="tamanho==0">
+        <td>Nenhuma Foto</td>
+    </tr>
+</table>
